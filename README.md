@@ -6,6 +6,7 @@ http://www.kabza.de/MyHome/SmartMeter/SmartMeter.php
 
 Der Stromzähler wird über eine IR-LED ausgelesen - die Daten werden im Anschluss per MQTT versendet.
 Die Schaltung vom Lesekopf ist als Skizze beigefügt: lesekopf.jpg
+
 Ausgelesen wird die Info Schnittstelle, vorne am Zähler.
 
 Als ESP8266 dient in meinem Fall ein Wmos D1 mini clone.
