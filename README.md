@@ -10,6 +10,7 @@ Die Schaltung vom Lesekopf ist als Skizze beigefügt: lesekopf.jpg
 Als ESP8266 dient in meinem Fall ein Wmos D1 mini clone.
 
 Da der Stromzähler Easymeter Q3AA leider über keine magnetische befestigungsmöglichkeit verfügt, habe ich eine Schablone mit dem 3D-Drucker gedruckt, die an der richtigen Stelle ein Loch hat um die LED aufzunehmen.
+Die Schablone habe ich vorsichtig mit Klebeband am Stromzähler befestigt.
 Die STL Datei ist ebenfalls beigefügt.
 
 In meinem Fall handelt es sich um einen Easymeter Q3AA 3064 V10.09
