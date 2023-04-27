@@ -16,4 +16,4 @@ Die STL Datei ist ebenfalls beigefügt.
 
 In meinem Fall handelt es sich um einen Easymeter Q3AA 3064 V10.09
 
-Ich musste keine PIN Nummer eingeben - der Zähler hat von Anfang an alle Daten mit nachkommastellen ausgegeben. Das szeht in der Anleitung zum Zähler anders - aber bei mit war es so.
+Ich musste keine PIN Nummer eingeben - der Zähler hat von Anfang an alle Daten mit nachkommastellen ausgegeben. Das steht in der Anleitung zum Zähler anders - aber bei mit war es so.
