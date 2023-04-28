@@ -5,7 +5,7 @@ Inspiriert von Alexander Kabza:
 http://www.kabza.de/MyHome/SmartMeter/SmartMeter.php
 
 Der Stromzähler wird über eine IR-LED ausgelesen - die Daten werden im Anschluss per MQTT versendet.
-Die Schaltung vom Lesekopf ist als Skizze beigefügt: lesekopf-schaltbild.jpg
+Die Schaltung vom Lesekopf ist als Skizze beigefügt: lesekopf_schaltbild.jpg
 
 Ausgelesen wird die Info Schnittstelle, vorne am Zähler links obehalb vom Display.
 
