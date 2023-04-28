@@ -1,8 +1,4 @@
-# easymeter_Q3AA
-
-## Stromzähler EasyMeter Q3AA auslesen mit ESP8266
-
-Inspiriert von [Alexander Kabza](http://www.kabza.de/MyHome/SmartMeter/SmartMeter.php)
+# Stromzähler EasyMeter Q3AA auslesen mit ESP8266
 
 Der Stromzähler wird über eine IR-LED ausgelesen - die Daten werden im Anschluss per MQTT versendet.
 Die Schaltung vom Lesekopf ist als Skizze beigefügt: *lesekopf_schaltbild.jpg*
@@ -21,3 +17,7 @@ Die STL Datei ist ebenfalls beigefügt.
 In meinem Fall handelt es sich um einen Easymeter **Q3AA 3064 V10.09**
 
 In der Anleitung zum Zähler (frei im Internet als PDF erhältlich) wird erklärt, dass man eine PIN Nummer eingeben muss, damit die Werte mit Nachkommastellen ausgelesen werden können. Das war bei meinem Zähler nicht so - ich konnte auch ohne PIN Eingabe von anfang an auf detaillierte Werte zugreifen.
+
+## Inspiriert von
+[Alexander Kabza](http://www.kabza.de/MyHome/SmartMeter/SmartMeter.php)
+Vielen Dank an dieser Stelle für den Sourcecode der zum Teil als Basis dieses Projekts gedient hat.
