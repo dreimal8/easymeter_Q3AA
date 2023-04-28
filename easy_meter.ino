@@ -14,6 +14,9 @@ WiFiClient wificlient;
 PubSubClient psclient(wificlient);
 
 int sendCount = 1;
+
+// Wie oft sollen die Werte gesendet werden? 3 bedeutet jeden dritten Datensatz
+// Da der EasyMeter Q3AA jede Sekunde einen Datensatz ausgibt, wäre das also ein neuer Wert alle 3 Sekunden
 int sendInterval = 3;
 
 #include <SoftwareSerial.h>
@@ -23,7 +26,8 @@ int sendInterval = 3;
 
 SoftwareSerial myPort;
 
-uint32_t prevOneSecMillis = 0;
+uint32_t currentMillis;
+uint32_t prevMillis = 0;
 uint32_t prev_smlMillis = 0;
 
 const String smlBegin               = "1b1b1b1b01010101";
@@ -43,8 +47,6 @@ bool foundStart = false;
 bool foundEnd = false;
 int indexBegin = 0;
 int indexEnd = 0;
-
-uint32_t currentMillis;
 
 bool toggleLED = true;
 
@@ -73,7 +75,7 @@ void parse_smlMsg() {
   String searchStr = searchStr_Bezug;
   uint16_t pos = smlMsg.indexOf(searchStr);
   if (pos > 0) {
-    pos = pos + searchStr.length() + 20;   // skip additional 10 Bytes = 20 Char!
+    pos = pos + searchStr.length() + 20;         // skip additional 10 Bytes = 20 Char!
     hexStr = smlMsg.substring(pos,  pos + 16);   // hexStr is 8 Byte = 16 Char
     value = strtoull(hexStr.c_str(), NULL, 16);
     bezug = (float)value;
@@ -157,7 +159,7 @@ void resetValues() {
   foundStart = false;
   foundEnd = false;
   smlTemp = "";                  // start with empty temporary SML message
-  prevOneSecMillis = currentMillis;
+  prevMillis = currentMillis;
   
 }
 
@@ -272,8 +274,8 @@ void connectToWifi() {
 void setup() {
   // put your setup code here, to run once:
 
-  pinMode(LED_BUILTIN, OUTPUT); // LED als Output definieren
-  digitalWrite(LED_BUILTIN, HIGH); // Ausschalten
+  pinMode(LED_BUILTIN, OUTPUT);    // LED als Output definieren
+  digitalWrite(LED_BUILTIN, HIGH); // LED Ausschalten
   
   Serial.begin(115200);
   Serial.println("");
@@ -340,10 +342,11 @@ void loop() {
 
   }
 
+  // kann länger als 3,2 Sekunden lang kein Datensatz gelesen werden, reset und neu versuchen
+  // 3,2 statt 3,0 Sekunden, um bei jedem Reset einen Versatz von 0,2 Sekunden zum 1 Sekundentakt des Stromzählers zu haben
+  if (currentMillis - prevMillis >= 3200) {
 
-  if (currentMillis - prevOneSecMillis >= 3200) {
-
-    prevOneSecMillis = currentMillis;
+    prevMillis = currentMillis;
     Serial.println("timeout - reset");
     myPort.end();
     resetValues();
