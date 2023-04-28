@@ -21,4 +21,4 @@ In der Anleitung zum Zähler (frei im Internet als PDF erhältlich) wird erklär
 ## Inspiriert von
 [Alexander Kabza](http://www.kabza.de/MyHome/SmartMeter/SmartMeter.php)
 
-Vielen Dank an dieser Stelle für den Sourcecode der zum Teil als Basis dieses Projekts gedient hat.
+Vielen Dank an dieser Stelle für den Sourcecode der zum Teil als Basis für dieses Projekt gedient hat.
