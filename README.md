@@ -1,5 +1,5 @@
 # easymeter_Q3AA
-Stromzähler EasyMeter Q3AA auslesen mit ESP8266
+<b>Stromzähler EasyMeter Q3AA auslesen mit ESP8266</b>
 
 Inspiriert von Alexander Kabza:
 http://www.kabza.de/MyHome/SmartMeter/SmartMeter.php
